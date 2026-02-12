@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.min.ex_room_db_mvvm_flow.UserEntity
 import com.min.ex_room_db_mvvm_flow.db.AppDatabase
+import com.min.ex_room_db_mvvm_flow.db.UserEntity
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val db: AppDatabase) : ViewModel() {

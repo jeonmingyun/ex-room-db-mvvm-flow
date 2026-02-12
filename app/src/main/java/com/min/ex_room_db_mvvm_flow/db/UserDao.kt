@@ -1,4 +1,4 @@
-package com.min.ex_room_db_mvvm_flow
+package com.min.ex_room_db_mvvm_flow.db
 
 import androidx.room.Dao
 import androidx.room.Delete

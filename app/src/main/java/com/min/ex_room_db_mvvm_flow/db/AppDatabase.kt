@@ -4,8 +4,6 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.min.ex_room_db_mvvm_flow.UserDao
-import com.min.ex_room_db_mvvm_flow.UserEntity
 
 /**
  * DB를 정의하는 클래스
