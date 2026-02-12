@@ -9,22 +9,14 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import com.min.ex_room_db_mvvm_flow.App
 import com.min.ex_room_db_mvvm_flow.R
+import com.min.ex_room_db_mvvm_flow.ui.BaseViewModelFactory
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var dataTextView: TextView
-
-    // ViewModel 인스턴스 생성 (by viewModels() 사용)
     private val viewModel: MainViewModel by viewModels {
-        object : ViewModelProvider.Factory {
-            override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                val db = (application as App).database
-                return MainViewModel(db) as T
-            }
-        }
+        BaseViewModelFactory((application as App).database)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
