@@ -13,13 +13,13 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface UserDao {
     // DB 업데이트시 실시간 반영이 필요한 쿼리에 Flow 사용
-    @Query("SELECT * FROM user")
+    @Query("SELECT * FROM UserEntity")
     fun getAll(): Flow<List<UserEntity>>
 
-    @Query("SELECT * FROM user WHERE uid IN (:userIds)")
+    @Query("SELECT * FROM UserEntity WHERE uid IN (:userIds)")
     suspend fun loadAllByIds(userIds: IntArray): List<UserEntity>
 
-    @Query("SELECT * FROM user WHERE first_name LIKE :first AND " +
+    @Query("SELECT * FROM UserEntity WHERE first_name LIKE :first AND " +
             "last_name LIKE :last LIMIT 1")
     suspend fun findByName(first: String, last: String): UserEntity
 
